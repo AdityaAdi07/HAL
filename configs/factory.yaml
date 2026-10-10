@@ -1,0 +1,225 @@
+shifts:
+  - code: "S1"
+    name: "Morning Shift"
+    start_time: "06:00:00"
+    end_time: "14:00:00"
+    break_h: 0.5
+  - code: "S2"
+    name: "Afternoon Shift"
+    start_time: "14:00:00"
+    end_time: "22:00:00"
+    break_h: 0.5
+
+skills:
+  - code: "SK-MOTOR"
+    name: "Motor Assembly"
+  - code: "SK-ELEC-WIRING"
+    name: "Electrical Wiring"
+  - code: "SK-MECH"
+    name: "Mechanical Assembly"
+  - code: "SK-FAB-ASSY"
+    name: "Fabric Assembly"
+  - code: "SK-PRECISION"
+    name: "Precision Assembly"
+  - code: "SK-SOLDER"
+    name: "Soldering"
+  - code: "SK-SENSOR-CAL"
+    name: "Sensor Calibration"
+  - code: "SK-FIRMWARE"
+    name: "Firmware Flashing"
+  - code: "SK-PWR-ELEC"
+    name: "Power Electronics"
+  - code: "SK-FINAL-ASSY"
+    name: "Final Assembly"
+  - code: "SK-CALIB"
+    name: "System Calibration"
+  - code: "SK-QC"
+    name: "Quality Control"
+
+workstation_types:
+  - code: "MOTOR_BENCH"
+    dept_code: "DEPT-MECH"
+    name: "Motor Assembly Bench"
+  - code: "ELEC_TEST_BENCH"
+    dept_code: "DEPT-MECH"
+    name: "Electrical Test Bench"
+  - code: "DRIVE_ASSY_BENCH"
+    dept_code: "DEPT-MECH"
+    name: "Drive Assembly Bench"
+  - code: "BEAM_ASSY_STATION"
+    dept_code: "DEPT-FAB"
+    name: "Beam Assembly Station"
+  - code: "HEDDLE_REED_JIG"
+    dept_code: "DEPT-FAB"
+    name: "Heddle/Reed Jig"
+  - code: "THREAD_PATH_BENCH"
+    dept_code: "DEPT-FAB"
+    name: "Thread Path Bench"
+  - code: "SOLDER_STATION"
+    dept_code: "DEPT-SENS"
+    name: "Soldering Station"
+  - code: "SENSOR_CAL_BENCH"
+    dept_code: "DEPT-SENS"
+    name: "Sensor Calibration Bench"
+  - code: "HARNESS_BENCH"
+    dept_code: "DEPT-SENS"
+    name: "Harness Bench"
+  - code: "POWER_ASSY_BENCH"
+    dept_code: "DEPT-PWR"
+    name: "Power Assembly Bench"
+  - code: "HV_TEST_BENCH"
+    dept_code: "DEPT-PWR"
+    name: "High Voltage Test Bench"
+  - code: "ASSEMBLY_BAY"
+    dept_code: "DEPT-ASSY"
+    name: "Final Assembly Bay"
+  - code: "CALIB_STATION"
+    dept_code: "DEPT-ASSY"
+    name: "System Calibration Station"
+  - code: "TEST_RIG"
+    dept_code: "DEPT-ASSY"
+    name: "End-of-line Test Rig"
+  - code: "PACK_STATION"
+    dept_code: "DEPT-ASSY"
+    name: "Packaging Station"
+
+workstations:
+  # MECH
+  - code: "WS-MECH-M1"
+    type_code: "MOTOR_BENCH"
+  - code: "WS-MECH-E1"
+    type_code: "ELEC_TEST_BENCH"
+  - code: "WS-MECH-D1"
+    type_code: "DRIVE_ASSY_BENCH"
+  - code: "WS-MECH-D2"
+    type_code: "DRIVE_ASSY_BENCH"
+  # FAB
+  - code: "WS-FAB-B1"
+    type_code: "BEAM_ASSY_STATION"
+  - code: "WS-FAB-B2"
+    type_code: "BEAM_ASSY_STATION"
+  - code: "WS-FAB-H1"
+    type_code: "HEDDLE_REED_JIG"
+  - code: "WS-FAB-T1"
+    type_code: "THREAD_PATH_BENCH"
+  # SENS
+  - code: "WS-SENS-S1"
+    type_code: "SOLDER_STATION"
+  - code: "WS-SENS-S2"
+    type_code: "SOLDER_STATION"
+  - code: "WS-SENS-C1"
+    type_code: "SENSOR_CAL_BENCH"
+  - code: "WS-SENS-H1"
+    type_code: "HARNESS_BENCH"
+  # PWR
+  - code: "WS-PWR-P1"
+    type_code: "POWER_ASSY_BENCH"
+  - code: "WS-PWR-P2"
+    type_code: "POWER_ASSY_BENCH"
+  - code: "WS-PWR-T1"
+    type_code: "HV_TEST_BENCH"
+  # ASSY
+  - code: "WS-ASY-B1"
+    type_code: "ASSEMBLY_BAY"
+  - code: "WS-ASY-B2"
+    type_code: "ASSEMBLY_BAY"
+  - code: "WS-ASY-B3"
+    type_code: "ASSEMBLY_BAY"
+  - code: "WS-ASY-C1"
+    type_code: "CALIB_STATION"
+  - code: "WS-ASY-T1"
+    type_code: "TEST_RIG"
+  - code: "WS-ASY-P1"
+    type_code: "PACK_STATION"
+
+workers:
+  - code: "WK-MECH-1"
+    name: "John Mech"
+    home_dept: "DEPT-MECH"
+    skills:
+      - code: "SK-MOTOR"
+        level: 5
+      - code: "SK-MECH"
+        level: 4
+  - code: "WK-MECH-2"
+    name: "Jane Mech"
+    home_dept: "DEPT-MECH"
+    skills:
+      - code: "SK-ELEC-WIRING"
+        level: 4
+      - code: "SK-MECH"
+        level: 3
+  
+  - code: "WK-FAB-1"
+    name: "Alice Fab"
+    home_dept: "DEPT-FAB"
+    skills:
+      - code: "SK-FAB-ASSY"
+        level: 4
+      - code: "SK-PRECISION"
+        level: 5
+  - code: "WK-FAB-2"
+    name: "Bob Fab"
+    home_dept: "DEPT-FAB"
+    skills:
+      - code: "SK-FAB-ASSY"
+        level: 3
+      - code: "SK-PRECISION"
+        level: 4
+
+  - code: "WK-SENS-1"
+    name: "Charlie Sens"
+    home_dept: "DEPT-SENS"
+    skills:
+      - code: "SK-SOLDER"
+        level: 5
+      - code: "SK-SENSOR-CAL"
+        level: 4
+  - code: "WK-SENS-2"
+    name: "Diana Sens"
+    home_dept: "DEPT-SENS"
+    skills:
+      - code: "SK-FIRMWARE"
+        level: 4
+      - code: "SK-SOLDER"
+        level: 3
+
+  - code: "WK-PWR-1"
+    name: "Eve Power"
+    home_dept: "DEPT-PWR"
+    skills:
+      - code: "SK-PWR-ELEC"
+        level: 5
+      - code: "SK-ELEC-WIRING"
+        level: 4
+  - code: "WK-PWR-2"
+    name: "Frank Power"
+    home_dept: "DEPT-PWR"
+    skills:
+      - code: "SK-PWR-ELEC"
+        level: 4
+
+  - code: "WK-ASSY-1"
+    name: "Grace Assy"
+    home_dept: "DEPT-ASSY"
+    skills:
+      - code: "SK-FINAL-ASSY"
+        level: 5
+      - code: "SK-ELEC-WIRING"
+        level: 4
+  - code: "WK-ASSY-2"
+    name: "Harry Assy"
+    home_dept: "DEPT-ASSY"
+    skills:
+      - code: "SK-SENSOR-CAL"
+        level: 4
+      - code: "SK-CALIB"
+        level: 4
+  - code: "WK-ASSY-3"
+    name: "Ivy Assy"
+    home_dept: "DEPT-ASSY"
+    skills:
+      - code: "SK-QC"
+        level: 5
+      - code: "SK-FINAL-ASSY"
+        level: 3

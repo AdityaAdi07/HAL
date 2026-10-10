@@ -1,0 +1,334 @@
+departments:
+  - code: "DEPT-MECH"
+    name: "Mechatronics"
+    dept_no: 1
+    layout_json: '{"x": 0, "y": 0, "z": 0}'
+    lead_worker_id: null
+    accent_icon: "cog"
+    components:
+      - code: "MECH-MOTOR"
+        name: "Drive motor assembly"
+        std_hours: 2.0
+        qty_per_loom: 1
+        skill: "SK-MOTOR"
+        min_skill_level: 3
+        workstation_types: ["MOTOR_BENCH"]
+        prereqs: []
+        visual_key: "motor"
+      - code: "MECH-DRIVER"
+        name: "Motor driver/controller unit"
+        std_hours: 1.8
+        qty_per_loom: 1
+        skill: "SK-ELEC-WIRING"
+        min_skill_level: 3
+        workstation_types: ["ELEC_TEST_BENCH"]
+        prereqs: []
+        visual_key: "driver_box"
+      - code: "MECH-COUPLING"
+        name: "Coupling & motor mount bracket"
+        std_hours: 1.0
+        qty_per_loom: 1
+        skill: "SK-MECH"
+        min_skill_level: 2
+        workstation_types: ["DRIVE_ASSY_BENCH", "MOTOR_BENCH"]
+        prereqs: ["MECH-MOTOR"]
+        visual_key: "coupling"
+      - code: "MECH-SPROCKET"
+        name: "Sprocket & shaft set"
+        std_hours: 1.2
+        qty_per_loom: 1
+        skill: "SK-MECH"
+        min_skill_level: 2
+        workstation_types: ["DRIVE_ASSY_BENCH"]
+        prereqs: []
+        visual_key: "sprocket"
+      - code: "MECH-CHAIN"
+        name: "Chain drive assembly"
+        std_hours: 1.5
+        qty_per_loom: 1
+        skill: "SK-MECH"
+        min_skill_level: 2
+        workstation_types: ["DRIVE_ASSY_BENCH"]
+        prereqs: ["MECH-SPROCKET"]
+        visual_key: "chain_loop"
+      - code: "MECH-TENSIONER"
+        name: "Chain tensioner"
+        std_hours: 0.8
+        qty_per_loom: 1
+        skill: "SK-MECH"
+        min_skill_level: 2
+        workstation_types: ["DRIVE_ASSY_BENCH"]
+        prereqs: []
+        visual_key: "tensioner"
+
+  - code: "DEPT-FAB"
+    name: "Fabrics"
+    dept_no: 2
+    layout_json: '{"x": 10, "y": 0, "z": 0}'
+    lead_worker_id: null
+    accent_icon: "spool"
+    components:
+      - code: "FAB-WARPBEAM"
+        name: "Warp beam assembly"
+        std_hours: 2.5
+        qty_per_loom: 1
+        skill: "SK-FAB-ASSY"
+        min_skill_level: 2
+        workstation_types: ["BEAM_ASSY_STATION"]
+        prereqs: []
+        visual_key: "beam_large"
+      - code: "FAB-CLOTHBEAM"
+        name: "Cloth (take-up) beam"
+        std_hours: 2.0
+        qty_per_loom: 1
+        skill: "SK-FAB-ASSY"
+        min_skill_level: 2
+        workstation_types: ["BEAM_ASSY_STATION"]
+        prereqs: []
+        visual_key: "beam_small"
+      - code: "FAB-HEDDLE"
+        name: "Heddle frame set (shafts + healds)"
+        std_hours: 3.0
+        qty_per_loom: 1
+        skill: "SK-PRECISION"
+        min_skill_level: 3
+        workstation_types: ["HEDDLE_REED_JIG"]
+        prereqs: []
+        visual_key: "heddle_frames"
+      - code: "FAB-REED"
+        name: "Reed & beat-up assembly"
+        std_hours: 2.2
+        qty_per_loom: 1
+        skill: "SK-PRECISION"
+        min_skill_level: 3
+        workstation_types: ["HEDDLE_REED_JIG"]
+        prereqs: []
+        visual_key: "reed_comb"
+      - code: "FAB-THREADGUIDE"
+        name: "Thread guide & tension roller set"
+        std_hours: 1.5
+        qty_per_loom: 1
+        skill: "SK-FAB-ASSY"
+        min_skill_level: 2
+        workstation_types: ["THREAD_PATH_BENCH"]
+        prereqs: []
+        visual_key: "rollers"
+      - code: "FAB-WEFT"
+        name: "Weft bobbin/cone holder set"
+        std_hours: 1.0
+        qty_per_loom: 1
+        skill: "SK-FAB-ASSY"
+        min_skill_level: 1
+        workstation_types: ["THREAD_PATH_BENCH"]
+        prereqs: []
+        visual_key: "bobbin_rack"
+
+  - code: "DEPT-SENS"
+    name: "Sensors"
+    dept_no: 3
+    layout_json: '{"x": -10, "y": 0, "z": 0}'
+    lead_worker_id: null
+    accent_icon: "radar"
+    components:
+      - code: "SENS-TEMP"
+        name: "Temperature sensor module"
+        std_hours: 0.5
+        qty_per_loom: 1
+        skill: "SK-SOLDER"
+        min_skill_level: 2
+        workstation_types: ["SOLDER_STATION"]
+        prereqs: []
+        visual_key: "pcb_small"
+      - code: "SENS-HUM"
+        name: "Humidity sensor module"
+        std_hours: 0.5
+        qty_per_loom: 1
+        skill: "SK-SOLDER"
+        min_skill_level: 2
+        workstation_types: ["SOLDER_STATION"]
+        prereqs: []
+        visual_key: "pcb_small"
+      - code: "SENS-RPM"
+        name: "RPM sensor (hall/IR) module"
+        std_hours: 0.7
+        qty_per_loom: 1
+        skill: "SK-SOLDER"
+        min_skill_level: 2
+        workstation_types: ["SOLDER_STATION"]
+        prereqs: []
+        visual_key: "pcb_ring"
+      - code: "SENS-IMU"
+        name: "MPU6050 vibration/IMU module"
+        std_hours: 0.8
+        qty_per_loom: 1
+        skill: "SK-SOLDER"
+        min_skill_level: 3
+        workstation_types: ["SOLDER_STATION", "SENSOR_CAL_BENCH"]
+        prereqs: []
+        visual_key: "pcb_chip"
+      - code: "SENS-LOAD"
+        name: "Load sensor (cell + amplifier) module"
+        std_hours: 1.2
+        qty_per_loom: 2
+        skill: "SK-SENSOR-CAL"
+        min_skill_level: 3
+        workstation_types: ["SENSOR_CAL_BENCH"]
+        prereqs: []
+        visual_key: "load_cell"
+      - code: "SENS-HUB"
+        name: "Sensor hub board (MCU) & harness"
+        std_hours: 1.5
+        qty_per_loom: 1
+        skill: "SK-FIRMWARE"
+        min_skill_level: 2
+        workstation_types: ["HARNESS_BENCH", "SOLDER_STATION"]
+        prereqs: []
+        visual_key: "pcb_hub"
+
+  - code: "DEPT-PWR"
+    name: "Power Optimization & Inlet"
+    dept_no: 4
+    layout_json: '{"x": 0, "y": 0, "z": -10}'
+    lead_worker_id: null
+    accent_icon: "bolt"
+    components:
+      - code: "PWR-INLET"
+        name: "Power inlet & protection panel"
+        std_hours: 1.2
+        qty_per_loom: 1
+        skill: "SK-PWR-ELEC"
+        min_skill_level: 2
+        workstation_types: ["POWER_ASSY_BENCH"]
+        prereqs: []
+        visual_key: "inlet_panel"
+      - code: "PWR-PSU"
+        name: "Regulated PSU module"
+        std_hours: 1.0
+        qty_per_loom: 1
+        skill: "SK-PWR-ELEC"
+        min_skill_level: 2
+        workstation_types: ["POWER_ASSY_BENCH"]
+        prereqs: []
+        visual_key: "psu_box"
+      - code: "PWR-METER"
+        name: "Energy metering module"
+        std_hours: 0.8
+        qty_per_loom: 1
+        skill: "SK-ELEC-WIRING"
+        min_skill_level: 2
+        workstation_types: ["POWER_ASSY_BENCH"]
+        prereqs: []
+        visual_key: "meter"
+      - code: "PWR-OPT"
+        name: "Power optimization controller"
+        std_hours: 2.0
+        qty_per_loom: 1
+        skill: "SK-PWR-ELEC"
+        min_skill_level: 3
+        workstation_types: ["POWER_ASSY_BENCH", "HV_TEST_BENCH"]
+        prereqs: ["PWR-PSU"]
+        visual_key: "controller"
+      - code: "PWR-HARNESS"
+        name: "Main power harness"
+        std_hours: 1.5
+        qty_per_loom: 1
+        skill: "SK-ELEC-WIRING"
+        min_skill_level: 2
+        workstation_types: ["HARNESS_BENCH"]
+        prereqs: ["PWR-INLET", "PWR-PSU"]
+        visual_key: "harness"
+
+  - code: "DEPT-ASSY"
+    name: "Assembly & Integration"
+    dept_no: 5
+    layout_json: '{"x": 0, "y": 0, "z": 10}'
+    lead_worker_id: null
+    accent_icon: "wrench"
+    components:
+      - code: "ASY-FRAME"
+        name: "Frame & chassis build"
+        std_hours: 4.0
+        qty_per_loom: 1
+        crew_size: 2
+        skill: "SK-FINAL-ASSY"
+        min_skill_level: 2
+        workstation_types: ["ASSEMBLY_BAY"]
+        prereqs: []
+        visual_key: "frame"
+      - code: "ASY-MECH"
+        name: "Mechatronics install"
+        std_hours: 2.5
+        qty_per_loom: 1
+        skill: "SK-FINAL-ASSY"
+        min_skill_level: 3
+        workstation_types: ["ASSEMBLY_BAY"]
+        prereqs: ["ASY-FRAME", "MECH-MOTOR", "MECH-DRIVER", "MECH-COUPLING", "MECH-SPROCKET", "MECH-CHAIN", "MECH-TENSIONER"]
+        visual_key: "install_mech"
+      - code: "ASY-FABRIC"
+        name: "Fabric-path install"
+        std_hours: 3.5
+        qty_per_loom: 1
+        skill: "SK-FINAL-ASSY"
+        min_skill_level: 3
+        workstation_types: ["ASSEMBLY_BAY"]
+        prereqs: ["ASY-MECH", "FAB-WARPBEAM", "FAB-CLOTHBEAM", "FAB-HEDDLE", "FAB-REED", "FAB-THREADGUIDE", "FAB-WEFT"]
+        visual_key: "install_fab"
+      - code: "ASY-POWER"
+        name: "Power integration"
+        std_hours: 2.0
+        qty_per_loom: 1
+        skill: "SK-ELEC-WIRING"
+        min_skill_level: 3
+        workstation_types: ["ASSEMBLY_BAY"]
+        prereqs: ["ASY-MECH", "PWR-INLET", "PWR-PSU", "PWR-METER", "PWR-OPT", "PWR-HARNESS"]
+        visual_key: "install_pwr"
+      - code: "ASY-SENSOR"
+        name: "Sensor integration"
+        std_hours: 2.0
+        qty_per_loom: 1
+        skill: "SK-SENSOR-CAL"
+        min_skill_level: 2
+        workstation_types: ["ASSEMBLY_BAY"]
+        prereqs: ["ASY-FABRIC", "ASY-POWER", "SENS-TEMP", "SENS-HUM", "SENS-RPM", "SENS-IMU", "SENS-LOAD", "SENS-HUB"]
+        visual_key: "install_sens"
+      - code: "ASY-CALIB"
+        name: "Calibration & firmware"
+        std_hours: 2.0
+        qty_per_loom: 1
+        skill: "SK-CALIB"
+        min_skill_level: 3
+        workstation_types: ["CALIB_STATION"]
+        prereqs: ["ASY-SENSOR"]
+        visual_key: "calib"
+      - code: "ASY-TEST"
+        name: "End-of-line test & QC"
+        std_hours: 2.5
+        qty_per_loom: 1
+        skill: "SK-QC"
+        min_skill_level: 3
+        workstation_types: ["TEST_RIG"]
+        prereqs: ["ASY-CALIB"]
+        visual_key: "test_rig"
+      - code: "ASY-PACK"
+        name: "Packaging & dispatch prep"
+        std_hours: 1.0
+        qty_per_loom: 1
+        skill: "SK-FINAL-ASSY"
+        min_skill_level: 1
+        workstation_types: ["PACK_STATION"]
+        prereqs: ["ASY-TEST"]
+        visual_key: "crate"
+
+loom_models:
+  - code: "LM-100"
+    name: "Base Powerloom"
+    complexity_multiplier: 1.0
+    active: true
+  - code: "LM-200"
+    name: "Powerloom with Tension Sensing"
+    complexity_multiplier: 1.2
+    active: true
+  - code: "LM-300"
+    name: "High-Power Loom"
+    complexity_multiplier: 1.5
+    active: true

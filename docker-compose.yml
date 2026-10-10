@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-hal}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hal_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-hal_twin}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-hal}:${POSTGRES_PASSWORD:-hal_pass}@postgres:5432/${POSTGRES_DB:-hal_twin}
+    depends_on:
+      - postgres
+    profiles: ["api"]
+
+volumes:
+  postgres_data:
